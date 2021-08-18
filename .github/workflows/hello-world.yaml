@@ -2,7 +2,8 @@ name: hello-world
 on: push
 jobs:
   my-job:
-    runs-on: grade:6-jdk11
+    runs-on: ubuntu:latest
+    container: grade:6-jdk11
     steps:
     - uses: actions/checkout@v2
     - name: my-step
