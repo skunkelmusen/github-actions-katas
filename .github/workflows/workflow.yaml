@@ -62,7 +62,7 @@ jobs:
   component-test:
     needs:  docker-image
     runs-on:  ubuntu-latest
-    container: docker:latest
+    #container: docker:latest
     steps:
       - uses: actions/checkout@v2
       - name: component test
