@@ -65,4 +65,4 @@ jobs:
     container: docker:latest
     steps:
       - name: component test
-        run: sh ci/component-test.sh
+        run: chmod +x ci/component-test.sh && sh ./ci/component-test.sh
