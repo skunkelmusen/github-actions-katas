@@ -5,8 +5,8 @@ env:
   docker_password: ${{ secrets.DOCKER_PASSWORD }}
 jobs:
   Clone-down:
-    #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
     container: gradle:6-jdk11
     steps:
       - uses: actions/checkout@v2
@@ -17,8 +17,8 @@ jobs:
           path: .
   Build:
     needs: Clone-down
-    #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
     container: gradle:6-jdk11
     steps:
       - name: Download artifact
@@ -35,8 +35,8 @@ jobs:
           path: .
   Test:
     needs: Clone-down
-    #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
     container: gradle:6-jdk11
     steps:
       - name: download artifact
@@ -49,8 +49,8 @@ jobs:
 
   docker-image:
     needs: [Build,Test]
-    #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
     container: docker:latest
     
     steps:
