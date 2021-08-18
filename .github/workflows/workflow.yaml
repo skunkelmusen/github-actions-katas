@@ -44,7 +44,7 @@ jobs:
       - name: test
         run: chmod +x ci/build-app.sh && ci/build-app.sh
 
-  ocker-image:
+  docker-image:
     needs: [Build,Test]
     runs-on: ubuntu-latest
     container: docker:latest
@@ -52,7 +52,7 @@ jobs:
       - name: download artifact
         uses: actions/download-artifact@v2
         with:
-          name: code end
+          name: code
           path: .
       - run: export GIT_COMMIT="GA-$GITHUB_SHA" && chmod +x ci/build-docker.sh && ci/build-docker.sh && chmod +x ci/push-docker.sh && ci/push-docker.sh
     
