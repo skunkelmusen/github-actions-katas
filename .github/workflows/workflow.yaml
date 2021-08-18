@@ -42,7 +42,7 @@ jobs:
           name: code
           path: .
       - name: test
-      run: chmod +x ci/build-app.sh && ci/build-app.sh
+        run: chmod +x ci/build-app.sh && ci/build-app.sh
 
   #Docker-image:
   #  meeds: [Build,Test]
