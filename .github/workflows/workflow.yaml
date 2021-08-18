@@ -49,9 +49,10 @@ jobs:
 
   docker-image:
     needs: [Build,Test]
-    runs-on: ubuntu-latest
-    #container: docker:latest
+    #runs-on: ubuntu-latest
     runs-on: self-hosted
+    container: docker:latest
+    
     steps:
       - name: download artifact
         uses: actions/download-artifact@v2
