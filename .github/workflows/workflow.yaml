@@ -50,7 +50,7 @@ jobs:
     container: docker:latest
     steps:
       - name: download artifact
-       uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v2
       with:
        name: code end
        path: .
