@@ -71,5 +71,5 @@ jobs:
     #container: docker:latest
     steps:
       - uses: actions/checkout@v2
-      - name: component test
+      - name: component test!
         run: chmod +x ci/component-test.sh && sh ./ci/component-test.sh
