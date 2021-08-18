@@ -51,8 +51,8 @@ jobs:
     steps:
       - name: download artifact
         uses: actions/download-artifact@v2
-      with:
-       name: code end
-       path: .
+        with:
+          name: code end
+          path: .
       - run: export GIT_COMMIT="GA-$GITHUB_SHA" && chmod +x ci/build-docker.sh && ci/build-docker.sh && chmod +x ci/push-docker.sh && ci/push-docker.sh
     
