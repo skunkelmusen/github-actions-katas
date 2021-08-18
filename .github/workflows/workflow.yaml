@@ -59,4 +59,10 @@ jobs:
       - run: GIT_COMMIT="GA-$GITHUB_SHA" sh ci/build-docker.sh 
       #- run: chmod +x ci/push-docker.sh 
       - run: GIT_COMMIT="GA-$GITHUB_SHA" sh ci/push-docker.sh
-    
+  component-test:
+    needs:  docker-imeage
+    runs-on:  ubuntu-latest
+    container: docker:latest
+    steps:
+      - name: component test
+        run: sh ci/component-test.sh
