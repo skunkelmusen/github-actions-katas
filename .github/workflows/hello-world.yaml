@@ -9,4 +9,4 @@ jobs:
     - name: my-step
       run: ci/build-app.sh
     - name: unit-step
-      run: cu/unit-test-app.sh
+      run: ci/unit-test-app.sh
