@@ -45,7 +45,7 @@ jobs:
         run: chmod +x ci/build-app.sh && ci/build-app.sh
 
   ocker-image:
-    meeds: [Build,Test]
+    needs: [Build,Test]
     runs-on: ubuntu-latest
     container: docker:latest
     steps:
