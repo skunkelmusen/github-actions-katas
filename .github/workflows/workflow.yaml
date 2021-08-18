@@ -20,14 +20,14 @@ jobs:
     container: gradle:6-jdk11
     steps:
       - name: Download artifact
-        uses: action/download-artifact@v2
+        uses: actions/download-artifact@v2
         with:
           name: code
           path: .
       - name: Build
         run: chmod +x ci/build-app.sh && ci/build-app.sh
       - name: upload repo
-        uses: action/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: code
           path: .
